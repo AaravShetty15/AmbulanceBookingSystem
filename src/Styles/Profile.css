@@ -1,0 +1,29 @@
+/* profile.css */
+
+/* Profile page container */
+.profile-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.profile-container h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Profile information styling */
+.profile-info {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    margin: 5px 0;
+}
+
+.profile-container button {
+    margin-top: 20px;
+}
