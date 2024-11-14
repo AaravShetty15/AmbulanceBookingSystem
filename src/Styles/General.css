@@ -1,6 +1,4 @@
-/* general.css */
-
-/* Basic styles for the app */
+ 
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,21 +6,21 @@ body {
     background-color: #f4f7fc;
 }
 
-/* Container for each page */
+
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Header */
+
 h1,
 h2 {
     color: #333;
     font-size: 2rem;
 }
 
-/* Button styles */
+
 button {
     padding: 10px 20px;
     border: none;
@@ -42,14 +40,42 @@ a {
     text-decoration: none;
 }
 
-/* Error message styles */
+
 .error-message {
     color: red;
     font-size: 1rem;
 }
 
-/* Loading message */
+
 .loading-message {
     font-size: 1.2rem;
     font-style: italic;
+}
+
+
+/* Basic styles for the app */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Container for each page */
+.container {
+    width: 80%;
+    margin: 2em auto;
+    padding: 2em;
+    max-width: 900px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1,
+h2 {
+    color: #333;
+    font-size: 2rem;
 }

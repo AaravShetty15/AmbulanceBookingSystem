@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import '../Styles/Request.css';  // Import request-specific styles
+//import '../Styles/Request.css';  // Import request-specific styles
 
 const RequestForm = () => {
   const [location, setLocation] = useState('');
   const [condition, setCondition] = useState('');
   const [status, setStatus] = useState('');
   const [eta, setEta] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,20 +20,30 @@ const RequestForm = () => {
       eta,
     };
 
-    console.log(newRequest);
     try {
-      console.log(newRequest);
       const response = await axios.post('http://localhost:5000/api/requests', newRequest);
       console.log('Request submitted:', response.data);
-      // Handle success (e.g., redirect or show success message)
+      setSuccessMessage('Request submitted successfully!');
+      setErrorMessage('');  // Clear any previous error messages
+      // Reset form fields
+      setLocation('');
+      setCondition('');
+      setStatus('');
+      setEta('');
     } catch (error) {
       console.error('Error submitting request:', error);
+      setErrorMessage('Error submitting request. Please try again.');
+      setSuccessMessage('');  // Clear any previous success messages
     }
   };
 
   return (
     <div className="request-container">
-      <h1>Create a New Request</h1>
+      
+      {/* Success and Error Messages */}
+      {successMessage && <div className="alert alert-success">{successMessage}</div>}
+      {errorMessage && <div className="alert alert-error">{errorMessage}</div>}
+      
       <form onSubmit={handleSubmit} className="request-form">
         <input
           type="text"

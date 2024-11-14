@@ -31,7 +31,8 @@ router.post('/add', async (req, res) => {
 
 router.get('/me', async (req, res) => {
   try {
-    const user = await User.findOne({});  // Fetch first user or you can filter based on other parameters
+    // const user = await User.findOne({});  // Fetch first user or you can filter based on other parameters
+    const user = await User.findOne({}).sort({ _id: -1 });  // Sort by _id in descending order to get the latest record
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }

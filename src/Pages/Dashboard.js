@@ -11,8 +11,7 @@ const Dashboard = () => {
   useEffect(() => {
     // Fetch user info and requests
     const fetchUserData = async () => {
-      const token = localStorage.getItem('token');  // Assuming JWT is stored in localStorage
-      if (token) {
+      const token = localStorage.getItem('token');  
         try {
           const response = await axios.get('http://localhost:5000/api/users/me', {
             headers: { Authorization: `Bearer ${token}` },
@@ -22,13 +21,11 @@ const Dashboard = () => {
         } catch (error) {
           console.error('Error fetching user data:', error);
         }
-      }
     };
 
     const fetchUserRequests = async () => {
       const token = localStorage.getItem('token');
-      if (token) {
-        try {
+              try {
           const response = await axios.get('http://localhost:5000/api/requests', {
             headers: { Authorization: `Bearer ${token}` },
           });
@@ -37,7 +34,6 @@ const Dashboard = () => {
           console.error('Error fetching requests:', error);
         }
       }
-    };
 
     fetchUserData();
     fetchUserRequests();
